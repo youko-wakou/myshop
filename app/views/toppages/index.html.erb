@@ -7,6 +7,7 @@
     <title>Myshop</title>
     <%= csrf_meta_tags %>
     <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
@@ -20,14 +21,21 @@
   <body class="top">
   
     <%= render :file => 'toppages/_top-image' %>
+    <% if logged_in? %>
+      <div class="main col-md-12 col-xs-12">
+        <%= render :file => 'toppages/_top-button' %>
+      </div>
+    <% else %>
+      <%= render :file =>'toppages/_new_user' %>
+    <% end %>
+ 
     <div class="col-md-12 col-xs-12 text-center">
       <%= render :file => 'layouts/_flash_messages' %>
     </div>
-  <% if logged_in? %>
-    <div class="main col-md-12 col-xs-12">
-      <%= render :file => 'toppages/_top-button' %>
+    <div class="rank col-md-12 col-xs-12">
+      <%= render :file => 'toppages/_rank' %>
+      <%= render :file => 'toppages/_desc' %>
     </div>
-  <% end %>
-      <%= render :file =>'toppages/_footer' %>
+     <%= render :file =>'toppages/_footer' %>
     </body>
   </html>

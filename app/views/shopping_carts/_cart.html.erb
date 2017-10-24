@@ -1,22 +1,21 @@
 <% @cart_item.each do |item| %>
-<div class="col-md-12 col-xs-12">
+<div class="col-md-12 col-xs-12"style="margin:15px 0;">
   <% @cart_num = current_user.shopping_carts.find_by(item_id: item.id) %>
   <div class="img-rounded col-md-8 col-md-offset-2 col-xs-12 bg-warning"style="border: 1px dotted #ffaa00;padding: 10px;">
-    <div class="col-md-3 col-xs-12 text-center">
+    <div class="col-md-3 col-sm-3 col-xs-12 text-center">
       <%= image_tag item.image.url,:class => 'img-rounded img-responsive img-thumbnail',:style => 'width:150px;height:130px;over-flow:hidden;' %>
     </div>
-    <div class="col-md-3 col-xs-5">
+    <div class="col-md-3 col-sm-3 col-xs-5">
       <p><%= item.name %></p>
     </div>
-    <div class="col-md-3 col-xs-4">
+    <div class="col-md-3 col-sm-3 col-xs-4">
       <p><%= item.price %>円</p>
     </div>
-    <div class="col-md-3 col-xs-3 text-center">
+    <div class="col-md-3 col-xs-3 col-sm-3 text-center">
       <%= link_to cart_delete_path(id: item.id),:method => 'delete',:class => 'trash-link' do %>
       <span class="fa fa-trash fa-3x"style="color: #ff6100;"></span>
       <% end %>
     </div>
-    
   </div>
 </div>
 <% end %>

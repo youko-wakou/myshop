@@ -1,0 +1,21 @@
+<div class="col-md-12 col-xs-12"style="margin: 15px 0;">
+  <div class="col-md-12 col-xs-12">
+    <div class="col-md-8 col-md-offsest-4 col-xs-offset-2 col-xs-8 text-center">
+      <h1 class="news">New Goods</h1>
+    </div>
+    <div class="col-xs-12 col-md-12 img-rounded"style="background:#ffd8e2;padding:10px;">
+      <div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1"style="border:2px dashed #ff709b;padding:10px;">
+        <% @create.each do |create| %>
+          <%= image_tag create.image.url,:class => 'img-rounded img-thumbnail col-md-4 col-sm-6 col-xs-12',:style => 'height:180px;' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if logged_in? %>
+    <div class="col-md-12 col-xs-12 text-center"style="padding:10px;">
+      <%= link_to shops_path,:style => 'color:#ff6073' do %>
+        <p style="font-size:15px;font-weight:bold;">ショッピングをする？<span class="fa fa-shopping-basket"></span>&nbsp;&gt;&gt;</p>
+       <% end %>
+    </div>
+  <% end %>
+</div>

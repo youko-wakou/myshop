@@ -27,17 +27,12 @@ Rails.application.routes.draw do
   
   
   resources :images, only: [:create]
-  
   resources :shopping_carts, only:[:index]
-  resources :shops,only: [:index,:show,:destroy,:create]
+  resources :shops,only: [:index]
   resources :receives, only:[:index,:show,:create]
   resources :messages, only:[:index,:destroy,:show,:create]
   resources :favorites, only: [:index,:show]
-  resources :user_shops, only: [:index,:create, :destroy,:create,:show] do
-    member do
-      get 'item_infos'
-    end
-  end
+  resources :user_shops, only: [:index,:create, :destroy,:create,:show]
   
   resources :items, only: [:index,:create,:destroy,:show]
   resources :profiles, only: [:create]

@@ -1,4 +1,4 @@
-<div class="col-md-12 col-xs-12">
+<div class="col-md-12 col-xs-12"style="margin:15px 0;">
   <% @result.each do |history| %>
     <div class="bg-primary col-md-12 col-xs-12 img-rounded" style="border:1px dotted white; border-radius: 15px;">
       <% @item_ary = history.item_id %>
@@ -13,8 +13,8 @@
           <% @item = Item.where(id: @id) %>
           <% @item.each do |item| %>
           <div class="col-md-12 col-xs-12">
-              <%= image_tag item.image.url,:class => 'img-thumbnail text-center col-md-6 col-xs-12 img-responsive',:style => 'height:80px;width:180px;margin-bottom: 5px;' %>
-            <div class="col-md-6 col-xs-12 text-center">
+              <%= image_tag item.image.url,:class => 'img-thumbnail text-center col-md-6 col-sm-6 col-xs-12 img-responsive',:style => 'height:80px;width:180px;margin-bottom: 5px;' %>
+            <div class="col-md-6 col-sm-6 col-xs-12 text-center">
               <p>[<%= item.name %>]</p>
               <p><%= item.price %>円</p>
             </div>

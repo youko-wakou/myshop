@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Sign up</h1>
+  <h1 class="news">Sign up</h1>
 </div>
 
 <div class="row">
@@ -26,8 +26,9 @@
       <%= f.label :password_confirmaiton, 'Confirmation' %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
-    
-    <%= f.submit 'Sign up', class: 'btn btn-block main-button' %>
+    <div class="col-xs-12 col-md-12" style="margin:15px 0">
+      <%= f.submit 'Sign up', class: 'btn btn-block button-change' %>
+    </div>
   <% end %>
   </div>
 </div>

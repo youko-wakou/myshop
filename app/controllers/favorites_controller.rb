@@ -45,7 +45,9 @@ class FavoritesController < ApplicationController
         @rank << @goods
       end
     end
-    @rank.first(10)
+    @rank = @rank.first(10)
     @num = [*1..10]
+    @top = @rank.first(5)
+    @five_num = [*1..5]
   end
 end

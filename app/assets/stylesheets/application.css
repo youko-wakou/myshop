@@ -1,10 +1,22 @@
 
 body.top {
-  overflow: auto
+  overflow-x: hidden;
 }
-div.main {
-  top:-80px;
+div.rank {
+  /*position: relative;*/
+  /*top: -100px;*/
+  color: black;
 }
+div.new-user {
+  border:5px dotted #f98da4;
+}
+div.new-user > p,h3{
+  color:#878080;
+}
+/*div.main {*/
+/*  position: absolute;*/
+/*  top:-50px;*/
+/*}*/
 div.btn-top {
   position: relative;
   top:-350px;
@@ -36,9 +48,27 @@ header {
 }
 a.top-font:hover{
   color:#f4306b;
-  height: 59px;
+}
+div.rank > img {
+  position: relative;
+}
+div.rank > span{
+  position: absolute;
+  padding:10px;
+  left:0%;
+}
+h1.news {
+  font-family: 'Bevan', cursive;
+  color: #ff6073;
+}
+h3.news {
+  font-family: 'Bevan', cursive;
+  color: #7f564b;
 }
 /*nav*/
+li.no-user > a{
+  color:white;
+}
 .top {
   color: white;
 }
@@ -47,11 +77,37 @@ a.top-font:hover{
   font-size: 15px;
   font-weight: bold;
 }
+span.icon-bar{
+  background:white;
+}
 a.name:hover {
   background: #f4306b;
 }
 .navbar-nav>li>a:hover {
   background: #f4306b;;
+}
+/*footer*/
+a.foot-nav {
+  color:white;
+}
+nav.navbar {
+  margin: 0;
+}
+div.foot-nav > div.copy {
+  line-height:50px;
+}
+div.icon >a {
+  color:white;
+  line-height:50px;
+}
+/*mypage*/
+button.sm-menu{
+  color:white;
+  background: #f98da4
+}
+
+a.top:hover {
+  background-color:#f98da4;
 }
 nav.mypage {
   margin: 0;
@@ -112,6 +168,12 @@ div.clear::before {
   color: #f2698c;
   font-weight: bold;
 }
+input.button-change:hover {
+  color: #f9435b;
+}
+div.user-wel > a:hover{
+  text-decoration:none;
+}
 .btn-li:hover{
   text-decoration: none;
   color:white;
@@ -166,6 +228,11 @@ div.favo-out:before{
 /*favorite-rank*/
 a.shop-link:hover {
   text-decoration: none;
+}
+/*shop*/
+h3.user-put {
+  font-family: 'Bevan', cursive;
+  color: white;
 }
 
 /*

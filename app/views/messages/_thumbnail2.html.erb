@@ -2,7 +2,7 @@
 <%= link_to user_message_path(user: message.user_id,id: message.id),:method =>'get' do %>
 <div class="col-xs-12 col-md-12" style="margin-bottom: 10px;">
   <div class="message bg-info col-xs-12 col-md-10 col-md-offset-1" style="border-radius: 15px;border: 2px dotted gray;">
-    <div class="text-center col-md-3 col-xs-12">
+    <div class="text-center col-md-3 col-sm-3 col-xs-12">
       <% if Image.where(user_id: message.user).present? %>
         <% @img = Image.find_by(user_id: message.user_id).image.url %>
       <% else %>
@@ -11,17 +11,17 @@
 
       <%= image_tag @img,:class => 'img-rounded img-responsive',:style => 'width: 100%;height: 100%;' %>
     </div>
-    <div class="col-md-4 col-xs-12 text-center">
+    <div class="col-md-4 col-xs-12 col-sm-6 text-center">
       <% @name = User.where(id: message.user_id) %>
       <% @name.each do |name| %>
         <p class="text-muted">for:&nbsp;[<%= name.name %>]</p>
       <% end %>
-        <p class="text-muted"><%= message.created_at %></p>
+        <p class="text-muted"><%= message.created_at.time.strftime("%Y年%m月%d日 %H:%M:%S") %></p>
         <p class="text-muted">title:&nbsp; [<%= message.title %>]</p>
         <p class="text-muted">message:&nbsp;<%= message.content.truncate(20) %></p>
 
     </div>
-    <div class="col-md-3 col-xs-12 text-center">
+    <div class="col-md-3 col-sm-3 col-xs-12 text-center">
       <% @get = Receive.where(message_id: message.id).count %>
       <p class="text-danger" style="font-weight:bold;">you get message!</p>
       <p><span class="badge" style="background: red; font-size:20px;"><%= @get %></span></p>
