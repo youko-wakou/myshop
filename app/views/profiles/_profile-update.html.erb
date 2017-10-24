@@ -1,0 +1,27 @@
+<div class="col-md-12 col-xs-12"style="margin-top: 15px;">
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <%= form_for(@profile,url:profiles_path) do |f| %>
+      <table class="table table-bordered">
+        <tr>
+          <th class="danger">住所</th>
+          <td><%= f.text_field :place,:placeholder => '地域や住所情報', :class => 'form-control center-block' %></td>
+        </tr>
+        <tr>
+          <th class="danger">ホームページ</th>
+          <td><%= f.text_field :hp,:placeholder => 'ホームページアドレスを入力してください ', :class => 'form-control center-block'  %></td>
+        </tr>
+        <tr>
+          <th class="danger">twitter</th>
+          <td><%= f.text_field :twitter,:placeholder => 'twitterIDを入力してください', :class => 'form-control center-block'  %></td>
+        </tr>
+        <tr>
+          <th class="danger">自己PR</th>
+          <td><%= f.text_field :pr,:placeholder => '自己PRを入力してください', :class => 'form-control center-block'  %></td>
+        </tr>
+      </table>
+      <div class="col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3">
+        <%= f.submit 'update', :class => 'btn-block button-change btn-lg' %>
+      </div>
+    <% end %>
+  </div>
+</div>

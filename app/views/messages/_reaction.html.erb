@@ -1,0 +1,17 @@
+<% @receives.each do |receive| %>
+<% @get_user.each do |user| %>
+  <div class="col-md-12 col-xs-12" style="margin-top: 10px;">
+    <div class="col-md-6 col-md-offset-6 col-xs-8 col-xs-offset-4 bg-info img-rounded"style="padding: 10px;">
+      <%= image_tag @get_image,:class => 'col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3 img-rounded img-thumbnail' %>
+      
+      <div class="col-md-12 col-xs-12 text-center">
+        <p>name:[<%= user.name %>]</p>
+        <p>date: <%= receive.created_at %></p>
+        <p>Title: [<%= receive.title %>]</p>
+        <p>&lt;message&gt;</p>
+        <div style="border: 2px dotted #ffaac0"><%= receive.content %></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>

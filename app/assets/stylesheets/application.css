@@ -1,6 +1,173 @@
+
+body.top {
+  overflow: auto
+}
+div.main {
+  top:-80px;
+}
+div.btn-top {
+  position: relative;
+  top:-350px;
+}
+div.title {
+  position: relative;
+  top: -280px;
+  right: -30px;
+  font-size: 250%;
+  font-family: 'Racing Sans One', cursive;
+  color: #ff6399;
+}
+body {
+  margin: 0;
+}
 .main-button {
   background-color: #ff8ea3;
 }
+
+header {
+    background-color: #ff6088;
+}
+/*navbar*/
+.top-font {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  font-size: 23px;
+  line-height: 30px;
+}
+a.top-font:hover{
+  color:#f4306b;
+  height: 59px;
+}
+/*nav*/
+.top {
+  color: white;
+}
+.name {
+  height: 59px;
+  font-size: 15px;
+  font-weight: bold;
+}
+a.name:hover {
+  background: #f4306b;
+}
+.navbar-nav>li>a:hover {
+  background: #f4306b;;
+}
+nav.mypage {
+  margin: 0;
+}
+ul.mypage {
+  margin: 0;
+}
+.mypage li{
+  width: 25%;
+}
+.prof_nav li a {
+  color: #ff77a0;
+  font-weight: bold;
+  display: block;
+}
+.prof_nav ul li{
+  list-style: none;
+  display: inline-block;
+  width: 23%;
+  height: 100%;
+  padding: 10px;
+  background: rgb(255,101,132);
+  background: linear-gradient(to bottom, rgba(255,101,132,1) 1%,rgba(255,249,249,1) 51%,rgba(255,183,205,1) 100%); 
+  border-radius: 20px;
+  border: 3px solid #ff77a0;
+}
+.prof_wrap a{
+  width: 100%;
+}
+.title {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  font-size: 23px;
+}
+@media screen and (max-width:544px){
+  .prof_nav ul li {
+    width: 100%;
+  }
+}
+.small {
+  color: white;
+}
+/*mypage*/
+div.clear::before {
+  content: ' ';
+}
+
+
+/*favorites*/
+.favorite-info {
+  position: absolute;
+  top: 20px;
+}
+.button-change {
+  background: rgb(255,101,132);
+  background: linear-gradient(to bottom, rgba(255,101,132,1) 1%,rgba(255,249,249,1) 51%,rgba(255,183,205,1) 100%); 
+  border:none;
+  color: #f2698c;
+  font-weight: bold;
+}
+.btn-li:hover{
+  text-decoration: none;
+  color:white;
+}
+/*shopping_cart*/
+a.trash-link {
+  text-decoration: none;
+}
+div.out {
+  position:relative;
+}
+div.out:before{
+  position:absolute;
+  content: 'SOLD OUT!!';
+  top:50%;
+  right:40%;
+  height:50px;
+  line-height:50px;
+  font-weight: bold;
+  width:100px;
+  text-align:center;
+  color: white;
+  background:red;
+  transform: rotate(-30deg);
+}
+/*favorite*/
+div.favo-out {
+  position:relative;
+}
+div.favo-out:before{
+  position:absolute;
+  content: 'SOLD OUT!!';
+  top:40%;
+  right:20%;
+  height:50px;
+  line-height:50px;
+  font-weight: bold;
+  width:100px;
+  text-align:center;
+  color: white;
+  background:red;
+  transform: rotate(-30deg);
+}
+/*shopping_cart*/
+.btn-shop {
+  background: rgb(255,165,0);
+  background: linear-gradient(to bottom, rgba(255,165,0,1) 1%,rgba(255,246,0,1) 45%,rgba(255,165,0,1) 100%);
+  border:none;
+  color:#ff911c;
+  font-weight: bold;
+}
+/*favorite-rank*/
+a.shop-link:hover {
+  text-decoration: none;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

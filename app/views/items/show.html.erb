@@ -1,0 +1,54 @@
+<div class="col-md-12 col-xs-12">
+  <% @items.each do |item| %>
+  <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1 bg-info img-rounded" style="padding: 10px;">
+    <div class="col-md- 12 col-xs-12 text-center">
+      <%= render 'favorites/favorite-button',item_id: item.id %>
+    </div>
+    <%= image_tag item.image.url, :class => 'img-thumbnail col-md-8 col-md-offset-2  col-xs-10 col-xs-offset-1 img-responsive' %>
+    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 text-center">
+      <h3>[出品名]</h3>
+      <p><%= item.name %></p>
+      <h3>[カテゴリー]</h3>
+      
+      <% if item.category == 1 %>
+        <p>衣類</p>
+      <% elsif item.category == 2 %>
+        <p>バック・アクセサリー</p>
+      <% elsif item.category == 3 %>
+        <p>書籍・コミック</p>
+      <% elsif item.category == 4 %>
+        <p>ゲーム機・その他</p>
+      <% elsif item.category == 5 %>
+        <p>化粧品</p>
+      <% end %>
+      <h3>[値段]</h3>
+      <p><%= item.price %>円</p>
+      <div class="col-md-12 col-xs-12 text-center">
+        <%= item.content %>
+      </div>
+    </div>
+  </div>
+  <%= render 'items/bought-button',item: item.id %>
+    <% @users.each do |user| %>
+      <%= link_to user do %>
+        <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 bg-primary" style="border-radius: 100px;margin-top: 25px;">
+          <%= image_tag @image,:class => ' col-md-4 col-xs-12 col-xs-offset- img-circle img-responsive img-thumbnail',:style => 'width: 200px;height: 200px; over-flow: hidden;' %>
+          <div class="col-md-4 col-xs-12 text-center"style="line-height: 100px;">
+            <span>出品ユーザー</span>
+            <h3 style="font-weight: bold;"><%= user.name %></h3>
+          </div>
+          <div class="col-md-3 col-xs-12 text-center" style="">
+            <p><span class="fa fa-eye fa-5x"></span></p>
+            <p>このユーザーの詳細について見る？</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<%= link_to shops_path do %>
+  <div class="col-md-12 col-xs-12 text-center" style="margin-top: 15px;">
+    <span class="fa fa-shopping-basket fa-5x"style="color:#ff5e5e;"></span>
+    <p style="font-weight: bold;color:#ff5e5e;">買い物の続きをする?</p>
+  </div>
+<% end %>

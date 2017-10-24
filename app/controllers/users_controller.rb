@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.new
+    @user = User.find(params[:id])
+    @profile = @user.profile
+    @image = Image.find_by(user_id: params[:id])
   end
 
   def new
@@ -17,12 +19,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      flash[:success] = 'ユーザーを登録しました'
-      redirect_to @user
+      flash[:success] = 'ユーザーを登録しました。ログインしてください'
+      redirect_to root_url
     else
       flash.now[:danger] = 'ユーザーの登録に失敗しました'
       render :new
     end
+  end
+  
+  def list
+    @user = User.all.order('created_at DESC').page(params[:page]).per(10)
   end
     
     private

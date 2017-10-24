@@ -1,0 +1,34 @@
+<div class="col-md-12 col-xs-12">
+  <div class="col-md-8 col-xs-10 col-xs-offset-1 col-md-offset-2">
+    <%= form_for(@item) do |f| %>
+      <div class="form-group">
+        <%= f.label :name,'出品名' %>
+        <%= f.text_field :name,:placeholder => '出品名を入力してください',:class => 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :category,'カテゴリー' %>
+        <%= f.select :category,{'衣類' => '1','バッグ・アクセサリー' => '2','書籍・コミック' => '3','ゲーム機・その他' => '4','化粧品' => '5'},{},{:class => 'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price, '値段' %>
+        <%= f.text_field :price,:placeholder => '数字を入力してください',:class => 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :image, '商品画像' %>
+        <%= f.file_field :image %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content,'商品説明' %>
+        <%= f.text_area :content,:class => 'form-control' %>
+      </div>
+      <% @item.view = 1 %>
+       <%= f.hidden_field :view %>
+       <% @history = 1 %>
+       <%= f.hidden_field :history,:value => @history %>
+       <div class="col-md-6 col-xs-12 col-md-offset-3">
+         <%= f.submit 'Send',:class => 'button-change text-center btn-block btn-lg' %>
+       </div>
+    <% end %>
+  </div>
+</div>

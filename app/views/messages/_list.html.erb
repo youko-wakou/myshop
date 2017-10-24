@@ -1,0 +1,8 @@
+<div class="col-md-12 col-xs-12" style="margin-bottom: 15px;">
+  <div class ="col-md-10 col-md-offset-1 col-xs-12" >
+    <ul class="nav nav-tabs nav-justified">
+      <li class="<%= 'active' if current_page?(messages_message_get_path)%>"><%= link_to messages_message_get_path,:class => 'bg-info' do %>受信トレイ<% end %></li>
+      <li class="<%= 'active' if current_page?(messages_message_path)%>"><%= link_to messages_message_path,:class => 'bg-info' do %>送信トレイ<% end %></li>
+    </ul>
+  </div>
+</div>

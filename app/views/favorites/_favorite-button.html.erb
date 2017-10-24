@@ -1,0 +1,14 @@
+
+    <% @item_id = item_id %>
+    <% @item_first = Item.where(id: @item_id).first %>
+    
+    <% if current_user.user_favorite.include?(@item_first) %>
+      <%= link_to favorites_destroy_path(item_id: @item_id),:method => :delete do %>
+        <i class="glyphicon glyphicon-heart" style="font-size: 50px;color: rgb(255,43,85);color: linear-gradient(135deg, rgba(255,43,85,1) 0%,rgba(255,183,228,1) 67%,rgba(255,183,228,1) 74%,rgba(255,183,228,1) 74%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2b55', endColorstr='#ffb7e4',GradientType=1 );"> </i>
+      <% end %>
+    <% else %>
+      <%= link_to favorites_create_path(item_id: @item_id),:method => :post do %>
+        <i class="glyphicon glyphicon-heart"style="font-size: 50px;color: rgb(43,212,255);color: linear-gradient(135deg, rgba(43,212,255,1) 1%,rgba(39,99,147,1) 100%);"> </i>
+      <% end %>
+    <% end %>
+

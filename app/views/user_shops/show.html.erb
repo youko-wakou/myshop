@@ -1,0 +1,26 @@
+
+<% @item_info.each do |item| %>
+  <div class="bg-info" style="border-radius: 15px;">
+    <table style="text-align: center; margin: 0 auto;">
+      <tr>
+        <td>
+          
+          <div class="thumbnail" style="width: 300px;margin: 15px">
+            <%= image_tag item.image.url, :class => 'img-responsive' %>
+          </div>
+          
+        </td>
+        <td style="padding-left: 15px">
+          
+          <h3>[出品名]</h3>
+          <p><%= item.name %></p>
+          <h3>[カテゴリー]</h3>
+          <p><%= item.category %></p>
+          <%= item.content %>
+          
+        </td>
+      </tr>
+      
+    </table>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<div class="col-md-12 col-xs-12">
+  <div class="form-inline col-md-6 col-md-offset-3 col-xs-12">
+    <%= form_tag(user_shops_path, :method => 'get') do %>
+      <%= select_tag :category,options_for_select({'衣類' => '1','バッグ・アクセサリー' => '2','書籍・コミック' => '3','ゲーム機・その他' => '4','化粧品' => '5'}),:include_blank => true,:style => 'height :26px;',:class =>'col-md-5 col-xs-12' %><!--
+  --><%= text_field_tag :name,params[:name],:placeholder => '商品名を入力してください',:class => 'col-md-5 col-xs-12' %><!--
+    --><%= submit_tag '検索' ,:class => 'col-md-2 col-xs-12',:style => 'height: 26px; background: #fc8d8d; border: 3px solid #ff5e5e;' %>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="col-md-12 col-xs-12">
+  <div class="col-md-4 col-xs-10 col-xs-offset-1 col-md-offset-4">
+    <% if @user.images.present? %>
+      <div class="bg-info" style="text-align:center; border-radius: 15px;">
+        <%= image_tag @image.image.url,:class => 'center-block img-circle img-responsive img-thumbnail',:style =>"width: 300px; height: 300px; over-flow:hidden" %>
+      </div>
+    <% else %>
+        <%= image_tag 'user.png',:class => 'center-block img-circle img-responsive img-thumbnail' %>
+    <% end %>
+  </div>
+</div>

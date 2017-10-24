@@ -1,0 +1,34 @@
+<div class="col-md-12 col-xs-12 ">
+  <div class="col-md-10 col-md-offset-1 col-xs-12" style="padding: 10px;background: #e6e6e6">
+    <% @favorite.each do |favorite| %>
+      <% if favorite.view == 1 %>
+        <div class="col-md-6 col-xs-12">
+          <%= link_to item_path(id: favorite.id) do %>
+            <div class="thumbnail  col-md-6 col-xs-12">
+              <%= image_tag favorite.image.url,:class => '',:style => 'width: 200px; height:150px;overflow:hedden;' %>
+            </div>
+          <% end %>
+          <div class="col-md-6 col-xs-12 text-center">
+            <p>[<%= favorite.name %>]</p>
+            <div><%= render 'favorites/favorite-button',item_id: favorite.id %></div>
+            <p><%= favorite.price %>円</p>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-md-6 col-xs-10">
+          <div class="favo-out thumbnail  col-md-6 col-xs-12">
+            <%= image_tag favorite.image.url,:class => '' %>
+          </div>
+          <div class="col-md-6 col-xs-12 text-center">
+            <p>[<%= favorite.name %>]</p>
+            <div><%= render 'favorites/favorite-button',item_id: favorite.id %></div>
+            <p><%= favorite.price %>円</p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="col-xs-12 col-md-12 text-center">
+  <%= paginate @favorite %>
+</div>

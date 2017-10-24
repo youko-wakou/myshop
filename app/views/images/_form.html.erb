@@ -1,0 +1,9 @@
+<div class="col-md-12 col-xs-12"style="margin-top: 10px;">
+  <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+    <%= form_for(@image,url: images_path) do |f| %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <%= f.submit 'Send',:class => 'btn-block button-change btn-lg',:style => 'border-radius: 15px; margin-top: 15px;' %>
+    <% end %>
+  </div>
+</div>

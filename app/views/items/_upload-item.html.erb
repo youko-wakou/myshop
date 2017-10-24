@@ -1,0 +1,29 @@
+<div class="col-md-12 col-xs-12" style="margin-top:10px;">
+  <div class="bg-info img-rounded col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" style="padding-top:10px;">
+    <div class="bg-info" style="border-radius: 15px;">
+      <% @goods.each do |goods| %>
+        <div class="thumbnail col-md-6 col-xs-12">
+          <%= image_tag goods.image.url, :class => 'img-responsive' %>
+        </div>
+        <div class="col-md-6 col-xs-12 text-center">
+          <h3>[出品名]</h3>
+          <p><%= goods.name %></p>
+          <h3>[カテゴリー]</h3>
+          <% @category = goods.category %>
+          <% if @categoty == 1 %>
+            <p>衣類</p>
+          <% elsif @category == 2 %>
+            <p>バッグ・アクセサリー</p>
+          <% elsif @categoru == 3%>
+            <p>書籍・コミック</p>
+          <% elsif @category == 4 %>
+            <p>ゲーム機・その他</p>
+          <% elsif @category == 5 %>
+            <p>化粧品</p>
+          <% end %>
+          <%= goods.content %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

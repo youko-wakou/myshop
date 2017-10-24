@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: myshop_production
+  encoding: unicode
+  pool: 5
   username: myshop
   password: <%= ENV['MYSHOP_DATABASE_PASSWORD'] %>

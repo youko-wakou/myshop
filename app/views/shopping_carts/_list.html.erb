@@ -1,0 +1,42 @@
+<div class="col-md-12 col-xs-12">
+  <% @result.each do |history| %>
+    <div class="bg-primary col-md-12 col-xs-12 img-rounded" style="border:1px dotted white; border-radius: 15px;">
+      <% @item_ary = history.item_id %>
+      <% @ary = @item_ary.delete('""[]') %>
+      <%# @ary = @ary.tr(",","/") %><br>
+      <% @ary = @item_ary.split(', ') %>
+      <% @ary.each do |ary| %>
+        <% @item_id = [] %>
+        <% @item_id <<  ary %>
+        <% @item_id.each do |id| %>
+          <% @id = id.delete('"[]') %>
+          <% @item = Item.where(id: @id) %>
+          <% @item.each do |item| %>
+          <div class="col-md-12 col-xs-12">
+              <%= image_tag item.image.url,:class => 'img-thumbnail text-center col-md-6 col-xs-12 img-responsive',:style => 'height:80px;width:180px;margin-bottom: 5px;' %>
+            <div class="col-md-6 col-xs-12 text-center">
+              <p>[<%= item.name %>]</p>
+              <p><%= item.price %>円</p>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      <div class="col-md-12 col-xs-12" style="border-top: 1px dotted white;">
+        <div class="col-md-2 col-xs-2">
+          <%= link_to shopping_carts_path(history: history.id),:method => 'delete' do %>
+            <span class="fa fa-minus-circle fa-2x"style="color:red"></span>
+          <% end %>
+        </div>
+
+        <div class="col-md-4 col-xs-10 text-center">
+          <small>購入日：&nbsp;<%= history.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %></small>
+        </div>
+        
+        <div class="col-md-6 col-xs-12 text-center"style="font-weight: bold;">
+          <p>合計金額：&nbsp;<%= history.total %>円</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

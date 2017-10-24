@@ -1,0 +1,19 @@
+<div class="col-md-12 col-xs-12">
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 img-rounded"style="background:#e6e6e6;">
+    <% @num.zip(@rank).each do |num,rank| %>
+      <div class="col-md-12 col-xs-12 text-center" style="font-weight:bold;color: white;margin: 15px 0;">
+        <button class="img-circle"style="border:none;background:#f2698c;width:35px;height:35px;"><%= num %></button><span style="color:black">&nbsp;位</span>
+      </div>
+      <div class="col-md-12 col-xs-12 text-center">
+        <%= image_tag rank.image.url,:class => 'img-rounded img-thumbnail img-responsive img-rounded',:style => 'width: 350px; height:200px;' %>
+      </div>
+      <div class="col-md-12 col-xs-12 text-center" style="font-weight:bold; border-bottom:2px dotted #ffa0be">
+        <p>[<%= rank.name %>]</p>
+        <p>price &nbsp; <%= rank.price %>&nbsp;yen</p>
+        <%= link_to item_path(id: rank.id),:class =>'shop-link' do %>
+          <p style="color:#ff7789">商品を詳しく見る&gt;&gt;<span class="fa fa-shopping-cart"></span></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

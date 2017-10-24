@@ -1,0 +1,12 @@
+
+<% @items.each do |item| %>
+  <%= link_to user_shop_path, item_id: item.id do %>
+    <div class="thumbnail" style="border-raius: 10px;display: inline-block;width: 20%;">
+      <p style="text-align: center;"><small><%= item.created_at %></small></p>
+      <%= image_tag item.image.url %>
+      <p style="text-align: center;">[<%= item.name %>]</p>
+      
+    </div>
+  <% end %>
+<% end %>
+<%= paginate @items %>

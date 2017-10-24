@@ -1,0 +1,12 @@
+<%= render :file => 'messages/_list' %>
+<%= render 'messages/thumbnail' %>
+<%= link_to messages_path do %>
+  <div class="col-md-12 col-xs-12 text-center"style="margin-top: 15px;">
+    <span class="fa fa-reply-all fa-2x"></span>
+  </div>
+<% end %>
+<div class="col-md-12 col-xs-12 text-center">
+  <%= paginate @messages %>
+</div>
+
+
